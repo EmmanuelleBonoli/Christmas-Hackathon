@@ -8,6 +8,9 @@
   height: 100vh;
   display: flex;
   align-items: center;
+
+  cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.svg), auto;
+
   position: relative;
 
     .tree {
@@ -15,6 +18,7 @@
       position: absolute;
       right: 8vw;
     }
+
 }
 
 
