@@ -1,0 +1,17 @@
+.christmasPage {
+  overflow: hidden;
+  background-image: url("./images/backGround_ChristmasHackathon.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+
+    .tree {
+      width: 50%;
+    }
+}
+
+

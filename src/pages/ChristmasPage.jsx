@@ -5,12 +5,14 @@ import SnowEffect from "../components/SnowEffect";
 
 const ChristmasPage = () => {
     return (
-        <div>
+        <div className="christmasPage">
             <Decorations />
             <SnowMan />
             <Tree />
             <SnowEffect />
+            <img className="tree" src="./images/christmasTree.png"></img>
         </div>
+       
     );
 };
 
