@@ -1,0 +1,56 @@
+.snowMan{
+    z-index: 1;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+
+    .snowBoxer{
+        position: absolute;
+        height: 15vh;
+        bottom: 40vh;
+        right:15vw;
+    }
+
+    .snowHide{
+        position: absolute;
+        height: 10vh;
+        top: 27vh;
+        left: 21.5vw;
+    }
+
+    .snowHide2{
+        position: absolute;
+        height: 10vh;
+        left: 5vw;
+        top: 41vh;
+    }
+
+    .snowSurfer{
+        position: absolute;
+        height: 25vh;
+        top: 40vh;
+        left: 10vw;
+    }
+
+
+    .snowFather{
+        position: absolute;
+        right: 5vw;
+        bottom: 10vh;
+        height: 40vh;
+    }
+
+    .snowManHi{
+        position: absolute;
+        height: 15vh;
+        top: 25vh;
+        right: 22vw;
+    }
+
+    .snowManHi2{
+        position: absolute;
+        height: 30vh;
+        bottom: 4vh;
+        left: 20vw;
+    }
+}
