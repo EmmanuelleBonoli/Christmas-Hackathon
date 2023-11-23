@@ -1,8 +1,8 @@
 
 const Tree = () => {
     return (
-        <div>
-            Tree
+        <div className="sapin">
+            
         </div>
     );
 };
