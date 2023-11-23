@@ -1,4 +1,5 @@
 .decorations {
+  z-index: 2;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,8 +9,12 @@
   flex-direction: column;
 
   .decorationsImage {
+    -webkit-box-shadow:0px 0px 50px 30px #ff0000 ;
+    -moz-box-shadow:0px 0px 50px 30px #ff0000 ;
+    box-shadow:0px 0px 50px 30px #ff0000 ;
     overflow-y: scroll;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     width: 50%;
@@ -24,6 +29,7 @@
   }
 
   .Filter {
+    z-index: 2;
     display: flex;
     width: 80%;
     justify-content: space-between;

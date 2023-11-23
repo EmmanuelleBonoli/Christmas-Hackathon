@@ -3,11 +3,13 @@
   align-items: center;
   justify-content: center;
   // border: black solid 1px;
-  width: 70%;
+  flex-wrap: wrap;
+  width: 5%;
   min-height: 15%;
+  flex-direction: column;
 
   img {
     object-fit: contain;
-    height: 100%;
+    height: 10%;
   }
 }
