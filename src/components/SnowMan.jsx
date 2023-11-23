@@ -33,7 +33,7 @@ function SnowMan() {
         <source src="./sounds/laughtSnowMan.mp3" type="audio/mp3" />
       </audio>
       <img
-        className={nameSnowMen}
+        className={`snowMensettings ${nameSnowMen}`}
         src={urlSnowMen}
         onClick={handleDisapear}
         alt="snowMan"
