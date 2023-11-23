@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import DragMove from "./DragMove";
+
 
 const DecorationCard = ({ decoration, translate, setTranslate }) => {
 

@@ -1,8 +1,10 @@
 .snowMan{
     z-index: 1;
-    position: relative;
-    width: 100vw;
+    position: absolute;
+    width: 70%;
     height: 100vh;
+    right: 0;
+    float: right;
 
     .snowMensettings{
         cursor: pointer;
