@@ -1,0 +1,14 @@
+.decorationCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: black solid 1px;
+  width: 70%;
+  min-height: 15%;
+  backdrop-filter: blur(5px);
+
+  img {
+    object-fit: contain;
+    height: 100%;
+  }
+}
