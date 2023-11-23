@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import React from "react";
+=======
+>>>>>>> 4bfba88730879a7c5acda4e36ccbcb6647afa491
 
 const Decorations = () => {
   const table = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
