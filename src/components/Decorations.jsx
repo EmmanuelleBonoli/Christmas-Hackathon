@@ -7,8 +7,8 @@ const Decorations = () => {
     <div className="decorations">
       <div className="Filter">
         <button>Boules</button>
-        <div>Etoiles</div>
-        <div>Extra</div>
+        <button>Etoiles</button>
+        <button>Extra</button>
       </div>
       {table.map((decoration) => {
         return (
