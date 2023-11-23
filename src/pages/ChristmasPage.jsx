@@ -1,5 +1,6 @@
 import SnowMan from "../components/SnowMan";
 import Decorations from "../components/Decorations";
+import SnowEffect from "../components/SnowEffect";
 import { useState } from "react";
 
 const ChristmasPage = () => {
@@ -17,8 +18,11 @@ const ChristmasPage = () => {
 
   return (
       <div className="christmasPage" onDrop={() => console.log("item dropped")} onDragOver={() => {console.log("dragging over")}}>
-        <SnowMan />
         <Decorations translate={translate} setTranslate={setTranslate} handleDragMove={handleDragMove} />
+        <SnowMan />
+        <SnowEffect />
+            <img className="tree" src="./images/christmasTree.png"></img>
+            <img className="traineau" src="./images/traineau.webp"></img> 
       </div>
   );
 };
