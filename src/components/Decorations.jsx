@@ -1,21 +1,97 @@
+import React, { useState } from "react";
+import decorationsList from "./decorationsList";
+import DecorationCard from "./DecorationCard";
 
 const Decorations = () => {
-  const table = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+  const [boulesFilter, setBoulesFilter] = useState(false);
+  const [etoilesFilter, setEtoilesFilter] = useState(false);
+  const [extraFilter, setExtraFilter] = useState(false);
 
   return (
     <div className="decorations">
       <div className="Filter">
-        <button>Boules</button>
-        <button>Etoiles</button>
-        <button>Extra</button>
+        <button
+          onClick={() => {
+            setBoulesFilter(!boulesFilter);
+            setEtoilesFilter(false);
+            setExtraFilter(false);
+          }}
+        >
+          Boules
+        </button>
+        <button
+          onClick={() => {
+            setEtoilesFilter(!etoilesFilter);
+            setBoulesFilter(false);
+            setExtraFilter(false);
+          }}
+        >
+          Etoiles
+        </button>
+        <button
+          onClick={() => {
+            setExtraFilter(!extraFilter);
+            setBoulesFilter(false);
+            setEtoilesFilter(false);
+          }}
+        >
+          Extra
+        </button>
       </div>
-      {table.map((decoration) => {
-        return (
-          <div className="decoration" key={decoration}>
-            {decoration}
-          </div>
-        );
-      })}
+      <div className="decorationsImage">
+        {boulesFilter === true &&
+          decorationsList
+            .filter((decoration) => {
+              return decoration.type === "boule";
+            })
+            .map((decoration) => {
+              return (
+                <DecorationCard key={decoration.id} decoration={decoration} />
+              );
+            })}
+
+        {etoilesFilter === true &&
+          decorationsList
+            .filter((decoration) => {
+              return decoration.type === "star";
+            })
+            .map((decoration) => {
+              return (
+                <DecorationCard key={decoration.id} decoration={decoration} />
+              );
+            })}
+
+        {etoilesFilter === true &&
+          decorationsList
+            .filter((decoration) => {
+              return decoration.type === "star";
+            })
+            .map((decoration) => {
+              return (
+                <DecorationCard key={decoration.id} decoration={decoration} />
+              );
+            })}
+
+        {extraFilter === true &&
+          decorationsList
+            .filter((decoration) => {
+              return decoration.type === "extra";
+            })
+            .map((decoration) => {
+              return (
+                <DecorationCard key={decoration.id} decoration={decoration} />
+              );
+            })}
+
+        {extraFilter === false &&
+          etoilesFilter === false &&
+          boulesFilter === false &&
+          decorationsList.map((decoration) => {
+            return (
+              <DecorationCard key={decoration.id} decoration={decoration} />
+            );
+          })}
+      </div>
     </div>
   );
 };
