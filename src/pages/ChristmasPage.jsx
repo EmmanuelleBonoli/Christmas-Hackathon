@@ -3,13 +3,13 @@ import Decorations from "../components/Decorations";
 import Tree from "../components/Tree";
 
 const ChristmasPage = () => {
-    return (
-        <div>
-            <Decorations />
-            <SnowMan />
-            <Tree />
-        </div>
-    );
+  return (
+    <div className="christmasPage">
+      <Decorations />
+      <SnowMan />
+      <Tree />
+    </div>
+  );
 };
 
 export default ChristmasPage;
