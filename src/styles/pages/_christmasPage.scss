@@ -8,9 +8,12 @@
   height: 100vh;
   display: flex;
   align-items: center;
+  position: relative;
 
     .tree {
       width: 50%;
+      position: absolute;
+      right: 8vw;
     }
 }
 
