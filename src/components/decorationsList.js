@@ -15,7 +15,7 @@ const decorationsList= [
         id:2,
         name:"deco1",
         url:"./images/deco1.webp",
-        type:"deco",
+        type:"extra",
     },
     {
         id:3,
@@ -51,7 +51,7 @@ const decorationsList= [
         id:8,
         name:"deco2",
         url:"./images/deco2.png",
-        type:"deco",
+        type:"extra",
     },
     {
         id:9,
@@ -87,7 +87,7 @@ const decorationsList= [
         id:14,
         name:"deco3",
         url:"./images/deco3.png",
-        type:"deco",
+        type:"extra",
     },
     {
         id:15,
@@ -123,7 +123,7 @@ const decorationsList= [
         id:20,
         name:"deco4",
         url:"./images/deco4.png",
-        type:"deco",
+        type:"extra",
     },
     {
         id:21,
@@ -159,7 +159,7 @@ const decorationsList= [
         id:26,
         name:"deco5",
         url:"./images/deco5.png",
-        type:"deco",
+        type:"extra",
     },
     {
         id:27,
@@ -177,7 +177,7 @@ const decorationsList= [
         id:29,
         name:"deco6",
         url:"./images/deco6.png",
-        type:"deco",
+        type:"extra",
     },
     {
         id:30,
@@ -195,7 +195,7 @@ const decorationsList= [
         id:32,
         name:"deco7",
         url:"./images/deco7.png",
-        type:"deco",
+        type:"extra",
     },
     {
         id:33,
