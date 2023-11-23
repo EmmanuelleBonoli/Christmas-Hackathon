@@ -9,6 +9,7 @@ const ChristmasPage = () => {
             <SnowMan />
             <SnowEffect />
             <img className="tree" src="./images/christmasTree.png"></img>
+            <img className="traineau" src="./images/traineau.webp"></img> 
         </div>
        
     );
