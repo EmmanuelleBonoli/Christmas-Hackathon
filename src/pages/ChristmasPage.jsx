@@ -20,7 +20,7 @@ const ChristmasPage = () => {
 
     return (
         <div className="shop">
-            <DragMove onDragMove={handleDragMove}>
+            {/* <DragMove onDragMove={handleDragMove}>
                 <div className="boule1"
                     style={{
                         transform: `translateX(${translate.x}px) translateY(${translate.y}px)`
@@ -28,26 +28,9 @@ const ChristmasPage = () => {
                 >
                     <img src="./images/boule1.png" className="App-logo" alt="logo" />
                 </div>
-            </DragMove>
-            <DragMove onDragMove={handleDragMove}> 
-                <div className="boule2"
-                    style={{
-                        transform: `translateX(${translate.x}px) translateY(${translate.y}px)`
-                    }}
-                >
-                    <img src="./images/boule2.png" className="App-logo" alt="logo" />
-                </div>
-            </DragMove>
-            <DragMove onDragMove={handleDragMove}>
-                <div className="boule3"
-                    style={{
-                        transform: `translateX(${translate.x}px) translateY(${translate.y}px)`
-                    }}
-                >
-                    <img src="./images/boule3.png" className="App-logo" alt="logo" />
-                </div>
-            </DragMove>
-            <Tree handleDragMove={handleDragMove}/>
+            </DragMove> */}
+            <SnowMan />
+            {/* <Tree handleDragMove={handleDragMove}/> */}
             {/* <Decorations />
             <SnowMan /> */}
             {/* <Tree handleDragMove={handleDragMove}/> */}
