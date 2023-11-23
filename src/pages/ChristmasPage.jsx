@@ -1,6 +1,7 @@
 import SnowMan from "../components/SnowMan";
 import Decorations from "../components/Decorations";
 import Tree from "../components/Tree";
+import SnowEffect from "../components/SnowEffect";
 
 const ChristmasPage = () => {
     return (
@@ -8,6 +9,7 @@ const ChristmasPage = () => {
             <Decorations />
             <SnowMan />
             <Tree />
+            <SnowEffect />
         </div>
     );
 };
