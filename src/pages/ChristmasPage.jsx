@@ -1,18 +1,53 @@
 import SnowMan from "../components/SnowMan";
 import Decorations from "../components/Decorations";
 import SnowEffect from "../components/SnowEffect";
+import React, { useState, useRef } from "react";
+import html2canvas from 'html2canvas';
 
 const ChristmasPage = () => {
-    return (
-        <div className="christmasPage">
-            <Decorations />
-            <SnowMan />
-            <SnowEffect />
-            <img className="tree" src="./images/christmasTree.png"></img>
-            <img className="traineau" src="./images/traineau.webp"></img> 
-        </div>
-       
-    );
+  const [translate, setTranslate] = useState({
+    x: 0,
+    y: 0,
+  });
+
+  const decorationsRef = useRef(null);
+
+  const handleDragMove = (e) => {
+    setTranslate({
+      x: translate.x + e.movementX,
+      y: translate.y + e.movementY,
+    });
+  };
+
+  const handleCapture = () => {
+    if (decorationsRef.current) {
+      html2canvas(decorationsRef.current, {
+        ignoreElements: (element) => {
+          return element.classList.contains('ignore-capture');
+        },
+      }).then((canvas) => {
+        const newWindow = window.open('', '_blank');
+        newWindow.document.body.appendChild(canvas);
+  
+        // Use a timeout to open the window after a short delay
+        setTimeout(() => {
+          newWindow.document.close(); // Close the document to complete loading
+          newWindow.focus(); // Bring the window to the foreground
+        }, 100);
+      });
+    }
+  };
+  
+
+  return (
+    <div className="christmasPage" onDrop={() => console.log("item dropped")} onDragOver={() => {console.log("dragging over")}}>
+        <Decorations ref={decorationsRef} translate={translate} setTranslate={setTranslate} handleDragMove={handleDragMove} />
+        <SnowMan />
+        <SnowEffect />
+        <img className="traineau" src="./images/traineau.webp"></img> 
+        <button type="button" className="capture" onClick={handleCapture}>Capture</button>
+    </div>
+  );
 };
 
 export default ChristmasPage;

@@ -13,27 +13,34 @@
 
   position: relative;
 
-    .tree {
-      width: 50%;
-      position: absolute;
-      right: 8vw;
-    }
-
+  .capture {
+    position: absolute;
+    left: 50%;
+    bottom: 1%;
+    z-index: 300;
+  }
 }
 
 .traineau {
   width: 50%;
   position:absolute;
+  z-index: 195;
   animation-name: slideIn;
-  animation-duration: 4s;
+  animation-duration: 30s;
   animation-iteration-count: infinite;
 }
 @keyframes slideIn {
   0% {
     transform: translate(-200px, 0px);
   }
-  50% {
+  10% {
     transform: translate(0px, 200px);
+  }
+  20% {
+    transform: translate(2000px, 40px);
+  }
+  21%{
+    transform: translate(2000px, 40px);
   }
   100% {
     transform: translate(2000px, 40px);
