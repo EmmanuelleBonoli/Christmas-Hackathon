@@ -7,7 +7,16 @@
   margin-left: 40px;
   flex-direction: column;
   border: solid black 1px;
-  overflow-y: scroll;
+
+  .decorationsImage {
+    overflow-y: scroll;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+  }
 
   .Filter {
     display: flex;
@@ -16,14 +25,5 @@
     align-items: center;
     margin-bottom: 10px;
     margin-top: 10px;
-  }
-
-  .decoration {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: black solid 1px;
-    width: 70%;
-    min-height: 15%;
   }
 }
