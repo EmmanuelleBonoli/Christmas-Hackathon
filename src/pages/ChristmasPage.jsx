@@ -1,41 +1,26 @@
-import { useState } from "react";
 import SnowMan from "../components/SnowMan";
 import Decorations from "../components/Decorations";
-import Tree from "../components/Tree";
-import DragMove from "../components/DragMove";
+import { useState } from "react";
 
 const ChristmasPage = () => {
+  const [translate, setTranslate] = useState({
+    x: 0,
+    y: 0,
+  });
 
-    const [translate, setTranslate] = useState({
-        x: 0,
-        y: 0
-      });
-    
-      const handleDragMove = (e) => {
-        setTranslate({
-          x: translate.x + e.movementX,
-          y: translate.y + e.movementY
-        });
-      };
+  const handleDragMove = (e) => {
+    setTranslate({
+      x: translate.x + e.movementX,
+      y: translate.y + e.movementY,
+    });
+  };
 
-    return (
-        <div className="shop">
-            {/* <DragMove onDragMove={handleDragMove}>
-                <div className="boule1"
-                    style={{
-                        transform: `translateX(${translate.x}px) translateY(${translate.y}px)`
-                    }}
-                >
-                    <img src="./images/boule1.png" className="App-logo" alt="logo" />
-                </div>
-            </DragMove> */}
-            <SnowMan />
-            {/* <Tree handleDragMove={handleDragMove}/> */}
-            {/* <Decorations />
-            <SnowMan /> */}
-            {/* <Tree handleDragMove={handleDragMove}/> */}
-        </div>
-    );
+  return (
+      <div className="christmasPage" onDrop={() => console.log("item dropped")} onDragOver={() => {console.log("dragging over")}}>
+        <SnowMan />
+        <Decorations translate={translate} setTranslate={setTranslate} handleDragMove={handleDragMove} />
+      </div>
+  );
 };
 
 export default ChristmasPage;

@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import decorationsList from "./decorationsList";
 import DecorationCard from "./DecorationCard";
 
-const Decorations = () => {
+
+const Decorations = ({ translate, setTranslate, handleDragMove}) => {
   const [boulesFilter, setBoulesFilter] = useState(false);
   const [etoilesFilter, setEtoilesFilter] = useState(false);
   const [extraFilter, setExtraFilter] = useState(false);
 
   return (
     <div className="decorations">
+      <div className="shop">
       <div className="Filter">
         <button
           onClick={() => {
@@ -46,7 +48,7 @@ const Decorations = () => {
             })
             .map((decoration) => {
               return (
-                <DecorationCard key={decoration.id} decoration={decoration} />
+                <DecorationCard key={decoration.id} decoration={decoration} translate={translate} setTranslate={setTranslate} />
               );
             })}
 
@@ -57,7 +59,7 @@ const Decorations = () => {
             })
             .map((decoration) => {
               return (
-                <DecorationCard key={decoration.id} decoration={decoration} />
+                <DecorationCard key={decoration.id} decoration={decoration}  translate={translate} setTranslate={setTranslate}/>
               );
             })}
 
@@ -68,11 +70,11 @@ const Decorations = () => {
             })
             .map((decoration) => {
               return (
-                <DecorationCard key={decoration.id} decoration={decoration} />
+                <DecorationCard key={decoration.id} decoration={decoration}  translate={translate} setTranslate={setTranslate}/>
               );
             })}
 
-        {extraFilter === true &&
+        {/* {extraFilter === true &&
           decorationsList
             .filter((decoration) => {
               return decoration.type === "extra";
@@ -81,16 +83,21 @@ const Decorations = () => {
               return (
                 <DecorationCard key={decoration.id} decoration={decoration} />
               );
-            })}
+            })} */}
 
         {extraFilter === false &&
           etoilesFilter === false &&
           boulesFilter === false &&
           decorationsList.map((decoration) => {
             return (
-              <DecorationCard key={decoration.id} decoration={decoration} />
+              <DecorationCard key={decoration.id} decoration={decoration}  translate={translate} setTranslate={setTranslate}/>
             );
           })}
+      </div>
+      </div>
+      
+      <div className="sapin">
+        <img src="./images/christmasTree.png"/>
       </div>
     </div>
   );

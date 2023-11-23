@@ -33,11 +33,13 @@ export default function DragMove(props) {
 
   return (
     <div
-      onPointerDown={handlePointerDown}
-      onPointerUp={handlePointerUp}
-      onPointerMove={handlePointerMove}
+    //   onPointerDown={handlePointerDown}
+    //   onPointerUp={handlePointerUp}
+    //   onPointerMove={handlePointerMove}
       style={style}
       className={className}
+      onDragOver={() => setIsDragging(false)}
+      onDrop={() => console.log('drop yes')}
     >
       {children}
     </div>
