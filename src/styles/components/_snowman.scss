@@ -62,21 +62,54 @@
   .snowBall {
     position: absolute;
     height: 15vh;
-    // bottom: 10vh;
-    // left: 20vw;
-    // animation-name: moveSnowBall;
-    // animation-duration: 3s; 
-    // animation-timing-function: ease; 
-    // animation-iteration-count: infinite;
+    animation-name: moveSnowBall;
+    animation-duration: 3s; 
+    animation-timing-function: ease; 
+    animation-iteration-count: infinite;
 
 
   }
   @keyframes moveSnowBall {
     0% {
-      transform: translate(0, 0);
+      transform: rotate(360deg);
+    }
+    50% {
+      transform: rotate(360deg);
     }
     100% {
-      transform: translate(var(--targetLeft), var(--targetTop))
+      transform: rotate(360deg);
+    }
+  }
+
+  .fallSnowMen{
+    animation-duration: 1s; 
+    animation-timing-function: ease; 
+    animation-name: fall;
+  }
+
+  @keyframes fall {
+    0% {
+     
+    }
+    100% {
+      transform: rotate(90deg);
+    }
+  }
+
+  .lucas{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation-duration: 1s; 
+    animation-timing-function: ease; 
+    animation-name: apparition;
+  }
+  @keyframes apparition {
+    0% {
+      transform: translate(0, 500px);
+    }
+    100% {
+      transform: translate(0, 0px);
     }
   }
 }
