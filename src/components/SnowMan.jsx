@@ -5,6 +5,9 @@ function SnowMan() {
   const audio = useRef(null);
   const audio2 = useRef(null);
 
+
+
+  const [urlLutin, setUrlLutin] = useState("./images/lutin.png")
   const [snowMan, setSnowMan] = useState(0);
   const [urlSnowMen, setUrlSnowMen] = useState("");
   const [nameSnowMen, setNameSnowMen] = useState("");
@@ -17,7 +20,7 @@ function SnowMan() {
     positionY: 1000,
   });
 
-  const minInterval = 3000;
+  const minInterval = 6000;
   const maxInterval = 20000;
   const intervalSnow = Math.floor(Math.random() * (maxInterval - minInterval + 1)) + minInterval;
 
@@ -84,7 +87,14 @@ const handleDisapear = (e) => {
         setSnowMan(1);
         setUrlSnowBall("./images/snowBall.png");
         setAnimationSnowMen("")
+
+        if(urlLutin === "./images/lutin.png"){
+          setUrlLutin("./images/lutin2.png")
+        }else{
+          setUrlLutin("./images/lutin.png")
+        }
     }, 3000)
+   
 }
 
   return (
@@ -119,7 +129,7 @@ const handleDisapear = (e) => {
           }}
           alt="snowBall"
         />
-        <img src="./images/lutin.png" className="lucas" alt="Lucas" />
+        <img src={urlLutin} className="lucas" alt="Lucas" />
         </div>
       ) : null}
     </div>
