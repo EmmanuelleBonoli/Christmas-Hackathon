@@ -1,53 +1,31 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import PropTypes from "prop-types";
 
 export default function DragMove(props) {
-  const {
-    onPointerDown,
-    onPointerUp,
-    onPointerMove,
-    onDragMove,
-    children,
-    style,
-    className
-  } = props;
+  const { children, style, className } = props;
 
-  const [isDragging, setIsDragging] = useState(false);
-
-  const handlePointerDown = (e) => {
-    setIsDragging(true);
-
-    onPointerDown(e);
-  };
-
-  const handlePointerUp = (e) => {
-    setIsDragging(false);
-
-    onPointerUp(e);
-  };
-
-  const handlePointerMove = (e) => {
-    if (isDragging) onDragMove(e);
-
-    onPointerMove(e);
-  };
+  const [setIsDragging] = useState(false);
 
   return (
     <div
-    //   onPointerDown={handlePointerDown}
-    //   onPointerUp={handlePointerUp}
-    //   onPointerMove={handlePointerMove}
       style={style}
       className={className}
       onDragOver={() => setIsDragging(false)}
-      onDrop={() => console.log('drop yes')}
+      onDrop={() => console.log("drop yes")}
     >
       {children}
     </div>
   );
 }
 
+DragMove.propTypes = {
+  children: PropTypes.string.isRequired,
+  style: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
+};
+
 DragMove.defaultProps = {
   onPointerDown: () => {},
   onPointerUp: () => {},
-  onPointerMove: () => {}
+  onPointerMove: () => {},
 };

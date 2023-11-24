@@ -1,10 +1,8 @@
-
-
 const SnowEffect = () => {
   return (
     <div className="container">
-        <div className="snowfall"></div>
-        </div>
+      <div className="snowfall"></div>
+    </div>
   );
 };
 
