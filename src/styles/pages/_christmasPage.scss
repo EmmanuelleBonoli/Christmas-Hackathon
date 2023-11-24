@@ -1,5 +1,6 @@
 .christmasPage {
   overflow: hidden;
+  z-index: 0;
   background-image: url("./images/backGround_ChristmasHackathon.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -9,7 +10,7 @@
   display: flex;
   align-items: center;
 
-  cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.svg), auto;
+  cursor: url("https://www.pngmart.com/files/11/Christmas-Candy-Cane-PNG-HD.png"), auto;
 
   position: relative;
 
@@ -31,7 +32,7 @@
 }
 @keyframes slideIn {
   0% {
-    transform: translate(-200px, 0px);
+    transform: translate(-2000px, 0px);
   }
   10% {
     transform: translate(0px, 200px) ;

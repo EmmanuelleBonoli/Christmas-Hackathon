@@ -1,10 +1,19 @@
 import SnowMan from "../components/SnowMan";
+import React, { useState, useEffect, useRef } from "react";
 import Decorations from "../components/Decorations";
 import SnowEffect from "../components/SnowEffect";
-import { useState, useRef } from "react";
 import html2canvas from 'html2canvas';
 
 const ChristmasPage = () => {
+
+  const audioRef = useRef(null);
+
+  const playAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.play();
+    }
+  };
+
   const [translate, setTranslate] = useState({
     x: 0,
     y: 0,
@@ -40,14 +49,20 @@ const ChristmasPage = () => {
   
 
   return (
-    <div className="christmasPage" onDrop={() => console.log("item dropped")} onDragOver={() => {console.log("dragging over")}}>
+    <div className="christmasPage" onClick={playAudio} onDrop={() => console.log("item dropped")} onDragOver={() => {console.log("dragging over")}}>
         <Decorations ref={decorationsRef} translate={translate} setTranslate={setTranslate} handleDragMove={handleDragMove} />
         <SnowMan />
         <SnowEffect />
         <img className="traineau" src="./images/traineau.webp"></img> 
         <button type="button" className="capture" onClick={handleCapture}>Capture</button>
+        <audio ref={audioRef}>
+        <source src="public/sounds/christmas.mp3" type="audio/mp3" />
+        <track kind="captions" />
+      </audio>
     </div>
   );
 };
 
 export default ChristmasPage;
+
+
