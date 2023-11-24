@@ -1,5 +1,5 @@
 .snowMan{
-    z-index: 191;
+    z-index: 300;
     position: absolute;
     width: 70%;
     height: 100vh;
@@ -63,21 +63,18 @@
     position: absolute;
     height: 15vh;
     animation-name: moveSnowBall;
-    animation-duration: 3s; 
-    animation-timing-function: ease; 
+    animation-duration: 1s; 
+    animation-timing-function: linear; 
     animation-iteration-count: infinite;
 
 
   }
   @keyframes moveSnowBall {
     0% {
-      transform: rotate(360deg);
-    }
-    50% {
-      transform: rotate(360deg);
+      transform: rotate(0deg);
     }
     100% {
-      transform: rotate(360deg);
+      transform: rotate(360deg) ;
     }
   }
 

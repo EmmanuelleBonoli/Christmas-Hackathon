@@ -1,6 +1,5 @@
-
-import React, { useState, useRef } from "react";
-import decorationsList from "./decorationsList";
+import PropTypes  from "prop-types";
+import { useState, useRef } from "react";
 
 
 
@@ -35,11 +34,15 @@ const DecorationCard = ({ decoration }) => {
         }}
       />
           <audio ref={audioRef}>
-        <source src="public/sounds/ho.mp3" type="audio/mp3" />
+        <source src="./sounds/ho.mp3" type="audio/mp3" />
         <track kind="captions" />
       </audio>
     </div>
   );
+};
+
+DecorationCard.propTypes = {
+  decoration: PropTypes.string.isRequired,
 };
 
 export default DecorationCard;

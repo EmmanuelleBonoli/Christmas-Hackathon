@@ -3,6 +3,7 @@ import snowMenList from "./snowMenList";
 
 function SnowMan() {
   const audio = useRef(null);
+  const audio2 = useRef(null);
 
   const [snowMan, setSnowMan] = useState(0);
   const [urlSnowMen, setUrlSnowMen] = useState("");
@@ -66,7 +67,11 @@ const handleDisapear = (e) => {
     //      const interval = setInterval(() => {
     //      setSnowBall((oldValue) => ({...oldValue, positionX: oldValue.positionX - pixelPerFramesInX , positionY: oldValue.positionY - pixelPerFramesInY    }))
     //  }, 8)
-
+    if (audio2.current != null) {
+      audio2.current.muted = false;
+     audio2.current.volume = 0.9;
+      audio2.current.play();
+    }
     setTimeout(() => {
               setUrlSnowBall("./images/splashSnowBall.png");
               setAnimationSnowMen("fallSnowMen")
@@ -79,9 +84,7 @@ const handleDisapear = (e) => {
         setSnowMan(1);
         setUrlSnowBall("./images/snowBall.png");
         setAnimationSnowMen("")
-      
     }, 3000)
-
 }
 
   return (
@@ -89,6 +92,10 @@ const handleDisapear = (e) => {
       <audio ref={audio} muted={false}>
         <track kind="captions" />
         <source src="./sounds/laughtSnowMan.mp3" type="audio/mp3" />
+      </audio>
+      <audio ref={audio2} muted={false}>
+        <track kind="captions" />
+        <source src="./sounds/YoshiHappySound.mp3" type="audio/mp3" />
       </audio>
       {snowMan === 0 ? (
         <img

@@ -1,5 +1,5 @@
 import SnowMan from "../components/SnowMan";
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import Decorations from "../components/Decorations";
 import SnowEffect from "../components/SnowEffect";
 import html2canvas from 'html2canvas';
@@ -69,6 +69,7 @@ import html2canvas from 'html2canvas';
         <SnowMan />
         <SnowEffect />
         <img className="traineau" src="./images/traineau.webp"></img> 
+
         {!message &&
         <button type="button" className="captureButton ignore-capture" onClick={() => setMessage(!message)}>Write a sweet message</button>
         }
@@ -81,8 +82,11 @@ import html2canvas from 'html2canvas';
 
           </div>
         }
-       <audio ref={audioRef}>
-        <source src="public/sounds/christmas.mp3" type="audio/mp3" />
+
+
+        <audio ref={audioRef}>
+        <source src="./sounds/christmas.mp3" type="audio/mp3" />
+
         <track kind="captions" />
       </audio>
     </div>
