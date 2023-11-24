@@ -1,99 +1,32 @@
-import { useState } from "react";
-import decorationsList from "./decorationsList";
+import React, { forwardRef, useEffect } from "react";
 import DecorationCard from "./DecorationCard";
+import decorationsList from "./decorationsList";
 
-const Decorations = () => {
-  const [boulesFilter, setBoulesFilter] = useState(false);
-  const [etoilesFilter, setEtoilesFilter] = useState(false);
-  const [extraFilter, setExtraFilter] = useState(false);
+const Decorations = forwardRef(({ translate, setTranslate }, ref) => {
+
+  useEffect(() => {
+    // You can access the ref here after the component has mounted
+    console.log(ref);
+  }, [ref]);
 
   return (
-    <div className="decorations">
-      <div className="Filter">
-        <button
-          onClick={() => {
-            setBoulesFilter(!boulesFilter);
-            setEtoilesFilter(false);
-            setExtraFilter(false);
-          }}
-        >
-          Boules
-        </button>
-        <button
-          onClick={() => {
-            setEtoilesFilter(!etoilesFilter);
-            setBoulesFilter(false);
-            setExtraFilter(false);
-          }}
-        >
-          Etoiles
-        </button>
-        <button
-          onClick={() => {
-            setExtraFilter(!extraFilter);
-            setBoulesFilter(false);
-            setEtoilesFilter(false);
-          }}
-        >
-          Extra
-        </button>
+    <div className="decorations" ref={ref}>
+      <div className="shop ignore-capture">
+        <div className="decorationsImage">
+          {decorationsList.map((decoration) => {
+                return (
+                  <DecorationCard key={decoration.id} decoration={decoration} translate={translate} setTranslate={setTranslate} />
+                );
+              })}
+        </div>
       </div>
-      <div className="decorationsImage">
-        {boulesFilter === true &&
-          decorationsList
-            .filter((decoration) => {
-              return decoration.type === "boule";
-            })
-            .map((decoration) => {
-              return (
-                <DecorationCard key={decoration.id} decoration={decoration} />
-              );
-            })}
-
-        {etoilesFilter === true &&
-          decorationsList
-            .filter((decoration) => {
-              return decoration.type === "star";
-            })
-            .map((decoration) => {
-              return (
-                <DecorationCard key={decoration.id} decoration={decoration} />
-              );
-            })}
-
-        {etoilesFilter === true &&
-          decorationsList
-            .filter((decoration) => {
-              return decoration.type === "star";
-            })
-            .map((decoration) => {
-              return (
-                <DecorationCard key={decoration.id} decoration={decoration} />
-              );
-            })}
-
-        {extraFilter === true &&
-          decorationsList
-            .filter((decoration) => {
-              return decoration.type === "extra";
-            })
-            .map((decoration) => {
-              return (
-                <DecorationCard key={decoration.id} decoration={decoration} />
-              );
-            })}
-
-        {extraFilter === false &&
-          etoilesFilter === false &&
-          boulesFilter === false &&
-          decorationsList.map((decoration) => {
-            return (
-              <DecorationCard key={decoration.id} decoration={decoration} />
-            );
-          })}
+      <div className="sapin">
+        <img src="public/images/christmasTree2.png"/>
       </div>
     </div>
   );
-};
+});
+
+Decorations.displayName = "Decorations";
 
 export default Decorations;

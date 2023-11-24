@@ -1,8 +1,10 @@
 .snowMan{
-    z-index: 1;
-    position: relative;
-    width: 100vw;
+    z-index: 191;
+    position: absolute;
+    width: 70%;
     height: 100vh;
+    right: 0;
+    float: right;
 
     .snowMensettings{
         cursor: pointer;
@@ -15,46 +17,66 @@
         right:15vw;
     }
 
-    .snowHide{
-        position: absolute;
-        height: 10vh;
-        top: 27vh;
-        left: 21.5vw;
-    }
+  .snowHide {
+    position: absolute;
+    height: 10vh;
+    top: 26vh;
+    left: 22.5vw;
+  }
 
-    .snowHide2{
-        position: absolute;
-        height: 10vh;
-        left: 5vw;
-        top: 41vh;
-    }
+  .snowHide2 {
+    position: absolute;
+    height: 10vh;
+    left: 6.5vw;
+    top: 42vh;
+  }
 
-    .snowSurfer{
-        position: absolute;
-        height: 25vh;
-        top: 40vh;
-        left: 10vw;
-    }
+  .snowSurfer {
+    position: absolute;
+    height: 25vh;
+    top: 43vh;
+    left: 12vw;
+  }
+
+  .snowFather {
+    position: absolute;
+    right: 5vw;
+    bottom: 10vh;
+    height: 40vh;
+  }
+
+  .snowManHi {
+    position: absolute;
+    height: 15vh;
+    top: 27vh;
+    right: 22vw;
+  }
+
+  .snowManHi2 {
+    position: absolute;
+    height: 30vh;
+    bottom: 4vh;
+    left: 22vw;
+  }
+
+  .snowBall {
+    position: absolute;
+    height: 15vh;
+    // bottom: 10vh;
+    // left: 20vw;
+    // animation-name: moveSnowBall;
+    // animation-duration: 3s; 
+    // animation-timing-function: ease; 
+    // animation-iteration-count: infinite;
 
 
-    .snowFather{
-        position: absolute;
-        right: 5vw;
-        bottom: 10vh;
-        height: 40vh;
+  }
+  @keyframes moveSnowBall {
+    0% {
+      transform: translate(0, 0);
     }
-
-    .snowManHi{
-        position: absolute;
-        height: 15vh;
-        top: 25vh;
-        right: 22vw;
+    100% {
+      transform: translate(var(--targetLeft), var(--targetTop))
     }
-
-    .snowManHi2{
-        position: absolute;
-        height: 30vh;
-        bottom: 4vh;
-        left: 20vw;
-    }
+  }
 }

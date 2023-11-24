@@ -1,15 +1,15 @@
 .decorationCard {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   // border: black solid 1px;
-  flex-wrap: wrap;
-  width: 5%;
-  min-height: 15%;
-  flex-direction: column;
+  width: 32%;
+  height: 9%;
+
+  
 
   img {
-    object-fit: contain;
-    height: 10%;
+    width: 32%;
   }
 }
