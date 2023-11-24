@@ -12,13 +12,16 @@ const Decorations = forwardRef(({ translate, setTranslate }, ref) => {
   return (
     <div className="decorations" ref={ref}>
       <div className="shop ignore-capture">
-      <div className="decorationsImage">
-        {decorationsList.map((decoration) => {
-              return (
-                <DecorationCard key={decoration.id} decoration={decoration} translate={translate} setTranslate={setTranslate} />
-              );
-            })}
+        <div className="decorationsImage">
+          {decorationsList.map((decoration) => {
+                return (
+                  <DecorationCard key={decoration.id} decoration={decoration} translate={translate} setTranslate={setTranslate} />
+                );
+              })}
+        </div>
       </div>
+      <div className="sapin">
+        <img src="public/images/christmasTree2.png"/>
       </div>
     </div>
   );
