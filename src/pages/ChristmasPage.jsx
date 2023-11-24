@@ -58,7 +58,7 @@ const ChristmasPage = () => {
         <audio ref={audioRef}>
         <source src="public/sounds/christmas.mp3" type="audio/mp3" />
         <track kind="captions" />
-      </audio>
+        </audio>
     </div>
   );
 };
