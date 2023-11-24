@@ -2,16 +2,18 @@ import React, { forwardRef, useEffect } from "react";
 import DecorationCard from "./DecorationCard";
 import decorationsList from "./decorationsList";
 
-const Decorations = forwardRef(({ translate, setTranslate }, ref) => {
+const Decorations = ({ translate, setTranslate }) => {
 
-  useEffect(() => {
-    // You can access the ref here after the component has mounted
-    console.log(ref);
-  }, [ref]);
+  // useEffect(() => {
+  //   // You can access the ref here after the component has mounted
+  //   console.log(ref);
+  // }, [ref]);
 
   return (
-    <div className="decorations" ref={ref}>
-      <div className="shop ignore-capture">
+    <div className="decorations" 
+    // ref={ref}
+    >
+      <div className="shop">
         <div className="decorationsImage">
           {decorationsList.map((decoration) => {
                 return (
@@ -25,8 +27,8 @@ const Decorations = forwardRef(({ translate, setTranslate }, ref) => {
       </div>
     </div>
   );
-});
+};
 
-Decorations.displayName = "Decorations";
+// Decorations.displayName = "Decorations";
 
 export default Decorations;

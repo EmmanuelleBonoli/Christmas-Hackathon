@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 
-const DecorationCard = ({ decoration, translate, setTranslate }) => {
+const DecorationCard = ({ decoration }) => {
 
   const [positionX, setPositionX] = useState(0)
   const [positionY, setPositionY] = useState(0)
