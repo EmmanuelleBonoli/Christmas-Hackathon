@@ -1,11 +1,13 @@
 import SnowMan from "../components/SnowMan";
+import React, { useState, useEffect, useRef } from "react";
 import Decorations from "../components/Decorations";
 import SnowEffect from "../components/SnowEffect";
-import React, { useEffect, useState, useRef } from "react";
 import html2canvas from 'html2canvas';
 
 // const ChristmasPage = () => {
   const ChristmasPage = () => {
+
+    const audioRef = useRef(null)
 
   const [message, setMessage] = useState(false);
 
@@ -72,13 +74,17 @@ import html2canvas from 'html2canvas';
         }
         {message &&
           <div className="shop message">
-            <textarea type="text" className="message" placeholder="Type your sweet message here" style={{width:"80%", height:"90%", resize:"none"}}>
+            <textarea type="text" className="message" placeholder="❤️❤️❤️❤️❤️❤️❤️❤️❤️ Type your sweet message here for your loves ones ❤️❤️❤️❤️❤️❤️❤️❤️❤️" style={{width:"80%", height:"90%", resize:"none"}}>
 
             </textarea>
             <button type="button" className="captureButton ignore-capture" onClick={handleCapture}>Capture your postcard</button>
 
           </div>
         }
+       <audio ref={audioRef}>
+        <source src="public/sounds/christmas.mp3" type="audio/mp3" />
+        <track kind="captions" />
+      </audio>
     </div>
   );
 };
@@ -86,3 +92,5 @@ import html2canvas from 'html2canvas';
 Decorations.displayName = "Decorations";
 
 export default ChristmasPage;
+
+
