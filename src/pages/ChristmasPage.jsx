@@ -1,5 +1,5 @@
 import SnowMan from "../components/SnowMan";
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import Decorations from "../components/Decorations";
 import SnowEffect from "../components/SnowEffect";
 import html2canvas from 'html2canvas';
@@ -56,7 +56,7 @@ const ChristmasPage = () => {
         <img className="traineau" src="./images/traineau.webp"></img> 
         <button type="button" className="capture" onClick={handleCapture}>Capture</button>
         <audio ref={audioRef}>
-        <source src="public/sounds/christmas.mp3" type="audio/mp3" />
+        <source src="./sounds/christmas.mp3" type="audio/mp3" />
         <track kind="captions" />
       </audio>
     </div>

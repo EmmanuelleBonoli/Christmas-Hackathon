@@ -1,4 +1,5 @@
 import { forwardRef, useEffect } from "react";
+import PropTypes  from "prop-types";
 import DecorationCard from "./DecorationCard";
 import decorationsList from "./decorationsList";
 
@@ -21,12 +22,17 @@ const Decorations = forwardRef(({ translate, setTranslate }, ref) => {
         </div>
       </div>
       <div className="sapin">
-        <img src="public/images/christmasTree2.png"/>
+        <img src="./images/christmasTree2.png"/>
       </div>
     </div>
   );
 });
 
 Decorations.displayName = "Decorations";
+
+Decorations.propTypes = {
+  translate: PropTypes.string.isRequired,
+  setTranslate: PropTypes.func.isRequired,
+};
 
 export default Decorations;
