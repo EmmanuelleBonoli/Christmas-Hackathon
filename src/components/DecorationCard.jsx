@@ -1,10 +1,9 @@
-
-import React, { useState, useRef } from "react";
-import decorationsList from "./decorationsList";
-
+import PropTypes  from "prop-types";
+import { useState, useRef } from "react";
 
 
-const DecorationCard = ({ decoration, translate, setTranslate }) => {
+
+const DecorationCard = ({ decoration }) => {
 
   const [positionX, setPositionX] = useState(0)
   const [positionY, setPositionY] = useState(0)
@@ -35,11 +34,15 @@ const DecorationCard = ({ decoration, translate, setTranslate }) => {
         }}
       />
           <audio ref={audioRef}>
-        <source src="public/sounds/ho.mp3" type="audio/mp3" />
+        <source src="./sounds/ho.mp3" type="audio/mp3" />
         <track kind="captions" />
       </audio>
     </div>
   );
+};
+
+DecorationCard.propTypes = {
+  decoration: PropTypes.string.isRequired,
 };
 
 export default DecorationCard;
