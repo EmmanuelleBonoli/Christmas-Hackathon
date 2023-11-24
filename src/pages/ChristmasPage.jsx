@@ -4,7 +4,6 @@ import Decorations from "../components/Decorations";
 import SnowEffect from "../components/SnowEffect";
 import html2canvas from "html2canvas";
 
-// const ChristmasPage = () => {
 const ChristmasPage = () => {
   const audioRef = useRef(null);
 
@@ -23,11 +22,6 @@ const ChristmasPage = () => {
 
   const decorationsRef = useRef(null);
 
-  // useEffect(() => {
-  //   // You can access the ref here after the component has mounted
-  //   console.log(ref);
-  // }, [ref]);
-
   const handleDragMove = (e) => {
     setTranslate({
       x: translate.x + e.movementX,
@@ -36,14 +30,6 @@ const ChristmasPage = () => {
   };
 
   const handleCapture = () => {
-    //   html2canvas(document.querySelector('.christmasPage'), {
-    //     onrendered: function(canvas) {
-    //         document.body.appendChild(canvas);
-    //       return Canvas2Image.saveAsPNG(canvas);
-    //     }
-    // })
-    // setMessage(sweetMessage);
-    // console.log(message);
 
     if (decorationsRef.current) {
       html2canvas(decorationsRef.current, {
@@ -54,10 +40,9 @@ const ChristmasPage = () => {
         const newWindow = window.open("", "_blank");
         newWindow.document.body.appendChild(canvas);
 
-        // Use a timeout to open the window after a short delay
         setTimeout(() => {
-          newWindow.document.close(); // Close the document to complete loading
-          newWindow.focus(); // Bring the window to the foreground
+          newWindow.document.close();
+          newWindow.focus(); 
         }, 500);
       });
     }
@@ -69,12 +54,8 @@ const ChristmasPage = () => {
       ref={decorationsRef}
       onDrop={() => console.log("item dropped")}
       onClick={playAudio}
-      onDragOver={() => {
-        console.log("dragging over");
-      }}
     >
       <Decorations
-        // ref={decorationsRef}
         translate={translate}
         setTranslate={setTranslate}
         handleDragMove={handleDragMove}

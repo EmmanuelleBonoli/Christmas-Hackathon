@@ -51,7 +51,7 @@ const DecorationCard = ({ decoration }) => {
 };
 
 DecorationCard.propTypes = {
-  decoration: PropTypes.string.isRequired,
+  decoration: PropTypes.object.isRequired,
 };
 
 export default DecorationCard;
