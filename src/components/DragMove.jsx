@@ -11,7 +11,7 @@ export default function DragMove(props) {
       style={style}
       className={className}
       onDragOver={() => setIsDragging(false)}
-      onDrop={() => console.log("drop yes")}
+      // onDrop={() => console.log("drop yes")}
     >
       {children}
     </div>

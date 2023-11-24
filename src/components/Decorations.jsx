@@ -27,7 +27,7 @@ const Decorations = ({ translate, setTranslate }) => {
 };
 
 Decorations.propTypes = {
-  translate: PropTypes.string.isRequired,
+  translate: PropTypes.object.isRequired,
   setTranslate: PropTypes.func.isRequired,
 };
 
