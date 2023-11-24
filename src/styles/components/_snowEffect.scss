@@ -1,43 +1,42 @@
 .container {
   z-index: 1;
-    height: 100%;
-    width: 100%;
-    border-radius: 50%;
-    position: absolute;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.snowfall {
+  background: url(https://i.imgur.com/T0mBFg2.png);
+  background-size: 350px 200px;
+  background-repeat: repeat;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  bottom: 0px;
+  animation: snowfall 5s linear infinite;
+  -webkit-animation: snowfall 5s linear infinite; 
+}
+
+@keyframes snowfall {
+  0% {
+    background-position: 0 0;
   }
-  
-  .snowfall {
-    background: url(https://i.imgur.com/T0mBFg2.png);
-    background-size: 350px 200px;
-    background-repeat: repeat;
-    height: 100%;
-    width: 100%;
-    position: relative;
-    bottom: 0px;
-    animation: snowfall 5s linear infinite; /* Utilisation de 'infinite' pour une animation infinie */
-    -webkit-animation: snowfall 5s linear infinite; /* Pour les navigateurs basés sur WebKit */
+  100% {
+    background-position: 350px 200px;
   }
-  
-  @keyframes snowfall {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 350px 200px; /* Valeur modifiée pour ajuster l'animation */
-    }
+}
+
+@-webkit-keyframes snowfall {
+  0% {
+    background-position: 0 0;
   }
-  
-  @-webkit-keyframes snowfall {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 350px 200px; /* Valeur modifiée pour ajuster l'animation */
-    }
+  100% {
+    background-position: 350px 200px; 
   }
-  
+}

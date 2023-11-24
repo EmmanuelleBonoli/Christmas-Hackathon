@@ -106,9 +106,12 @@ const ChristmasPage = () => {
               border: "solid 5px #CC231E",
               background: "#0F8A5F",
               textAlign: "center",
-              textWrap:"wrap",
+              textWrap: "wrap",
             }}
-          >❤️❤️❤️❤️❤️❤️❤️❤️ Type your sweet message here for your loves ones ❤️❤️❤️❤️❤️❤️❤️❤️ </div>
+          >
+            ❤️❤️❤️❤️❤️❤️❤️❤️ Type your sweet message here for your loves ones
+            ❤️❤️❤️❤️❤️❤️❤️❤️{" "}
+          </div>
           <button
             type="button"
             className="captureButton ignore-capture"

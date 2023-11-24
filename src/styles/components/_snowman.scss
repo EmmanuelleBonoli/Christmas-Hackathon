@@ -1,21 +1,21 @@
-.snowMan{
-    z-index: 300;
+.snowMan {
+  z-index: 300;
+  position: absolute;
+  width: 70%;
+  height: 100vh;
+  right: 0;
+  float: right;
+
+  .snowMensettings {
+    cursor: pointer;
+  }
+
+  .snowBoxer {
     position: absolute;
-    width: 70%;
-    height: 100vh;
-    right: 0;
-    float: right;
-
-    .snowMensettings{
-        cursor: pointer;
-    }
-
-    .snowBoxer{
-        position: absolute;
-        height: 15vh;
-        bottom: 40vh;
-        right:15vw;
-    }
+    height: 15vh;
+    bottom: 40vh;
+    right: 15vw;
+  }
 
   .snowHide {
     position: absolute;
@@ -63,42 +63,49 @@
     position: absolute;
     height: 15vh;
     animation-name: moveSnowBall;
-    animation-duration: 1s; 
-    animation-timing-function: linear; 
+    animation-duration: 1s;
+    animation-timing-function: linear;
     animation-iteration-count: infinite;
-
-
   }
   @keyframes moveSnowBall {
     0% {
       transform: rotate(0deg);
     }
     100% {
-      transform: rotate(360deg) ;
+      transform: rotate(360deg);
     }
   }
 
-  .fallSnowMen{
-    animation-duration: 1s; 
-    animation-timing-function: ease; 
+  .fallSnowMen {
+    animation-duration: 1s;
+    animation-timing-function: ease;
     animation-name: fall;
   }
 
   @keyframes fall {
     0% {
-     
     }
     100% {
       transform: rotate(90deg);
     }
   }
 
-  .lucas{
+  .lukasz {
     position: absolute;
     bottom: 0;
     left: 0;
-    animation-duration: 1s; 
-    animation-timing-function: ease; 
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-name: apparition;
+    height: 35vh;
+  }
+
+  .lucas {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation-duration: 1s;
+    animation-timing-function: ease;
     animation-name: apparition;
   }
   @keyframes apparition {

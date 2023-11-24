@@ -5,13 +5,12 @@ function SnowMan() {
   const audio = useRef(null);
   const audio2 = useRef(null);
 
-
-
-  const [urlLutin, setUrlLutin] = useState("./images/lutin.png")
+  const [urlLutin, setUrlLutin] = useState("./images/lutin.png");
+  const [nameLutin, setNameLutin] = useState("lucas");
   const [snowMan, setSnowMan] = useState(0);
   const [urlSnowMen, setUrlSnowMen] = useState("");
   const [nameSnowMen, setNameSnowMen] = useState("");
-  const [animationSnowMen, setAnimationSnowMen] = useState("")
+  const [animationSnowMen, setAnimationSnowMen] = useState("");
 
   const [urlSnowBall, setUrlSnowBall] = useState("./images/snowBall.png");
   const [snowBall, setSnowBall] = useState({
@@ -22,7 +21,8 @@ function SnowMan() {
 
   const minInterval = 6000;
   const maxInterval = 20000;
-  const intervalSnow = Math.floor(Math.random() * (maxInterval - minInterval + 1)) + minInterval;
+  const intervalSnow =
+    Math.floor(Math.random() * (maxInterval - minInterval + 1)) + minInterval;
 
   useEffect(() => {
     setUrlSnowMen("./images/snowManBoxer.png");
@@ -41,61 +41,58 @@ function SnowMan() {
     return () => clearInterval(apparitionSnowMen);
   }, []);
 
-const handleDisapear = (e) => {
-    setSnowBall((oldValue) => ({...oldValue, isVisible: true}))
+  useEffect(() => {
+    if (urlLutin === "./images/lutin.png") {
+      setNameLutin("lucas");
+    } else {
+      setNameLutin("lukasz");
+    }
+  }, [urlLutin]);
 
-    // const snowmanLeft = e.clientX
-    // const snowmanTop = e.clientY
+  const handleDisapear = (e) => {
+    setSnowBall((oldValue) => ({ ...oldValue, isVisible: true }));
 
     const snowmanRight = e.clientX;
     const snowmanBottom = window.innerHeight - e.clientY;
-    // console.log(snowmanLeft, snowmanTop)
 
-    const frames = 3000/8
+    const frames = 3000 / 8;
+    const pixelToGoInX = snowmanRight + 100 - window.innerWidth / 3;
+    const pixelToGoInY = snowmanBottom - 200;
 
-    // const pixelToGoInX = snowmanLeft - window.innerWidth/3
-    // const pixelToGoInY = snowmanTop
-
-    const pixelToGoInX =  snowmanRight + 100 - window.innerWidth/3  ; 
-    const pixelToGoInY =  snowmanBottom - 200;
-    // const pixelToGoInX =  snowmanRight   ; 
-    // const pixelToGoInY =  snowmanBottom - 200;
-
-    const pixelPerFramesInX = pixelToGoInX/frames
-    const pixelPerFramesInY = pixelToGoInY/frames
+    const pixelPerFramesInX = pixelToGoInX / frames;
+    const pixelPerFramesInY = pixelToGoInY / frames;
 
     const interval = setInterval(() => {
-        setSnowBall((oldValue) => ({...oldValue, positionX: oldValue.positionX + pixelPerFramesInX , positionY: oldValue.positionY - pixelPerFramesInY    }))
-    }, 8)
-    //      const interval = setInterval(() => {
-    //      setSnowBall((oldValue) => ({...oldValue, positionX: oldValue.positionX - pixelPerFramesInX , positionY: oldValue.positionY - pixelPerFramesInY    }))
-    //  }, 8)
+      setSnowBall((oldValue) => ({
+        ...oldValue,
+        positionX: oldValue.positionX + pixelPerFramesInX,
+        positionY: oldValue.positionY - pixelPerFramesInY,
+      }));
+    }, 8);
     if (audio2.current != null) {
       audio2.current.muted = false;
-     audio2.current.volume = 0.9;
+      audio2.current.volume = 0.9;
       audio2.current.play();
     }
     setTimeout(() => {
-              setUrlSnowBall("./images/splashSnowBall.png");
-              setAnimationSnowMen("fallSnowMen")
-         }, 2500);
+      setUrlSnowBall("./images/splashSnowBall.png");
+      setAnimationSnowMen("fallSnowMen");
+    }, 2500);
 
     setTimeout(() => {
-        clearInterval(interval)
-        setSnowBall({positionX: 0,
-            positionY: 1000, isVisible: false})
-        setSnowMan(1);
-        setUrlSnowBall("./images/snowBall.png");
-        setAnimationSnowMen("")
+      clearInterval(interval);
+      setSnowBall({ positionX: 0, positionY: 1000, isVisible: false });
+      setSnowMan(1);
+      setUrlSnowBall("./images/snowBall.png");
+      setAnimationSnowMen("");
 
-        if(urlLutin === "./images/lutin.png"){
-          setUrlLutin("./images/lutin2.png")
-        }else{
-          setUrlLutin("./images/lutin.png")
-        }
-    }, 3000)
-   
-}
+      if (urlLutin === "./images/lutin.png") {
+        setUrlLutin("./images/lutin2.png");
+      } else {
+        setUrlLutin("./images/lutin.png");
+      }
+    }, 3000);
+  };
 
   return (
     <div className="snowMan">
@@ -120,16 +117,16 @@ const handleDisapear = (e) => {
 
       {snowBall.isVisible ? (
         <div>
-        <img
-          src={urlSnowBall}
-          className="snowBall"
-          style={{
-            left: `${snowBall.positionX}px`,
-            top: `${snowBall.positionY}px`,
-          }}
-          alt="snowBall"
-        />
-        <img src={urlLutin} className="lucas" alt="Lucas" />
+          <img
+            src={urlSnowBall}
+            className="snowBall"
+            style={{
+              left: `${snowBall.positionX}px`,
+              top: `${snowBall.positionY}px`,
+            }}
+            alt="snowBall"
+          />
+          <img src={urlLutin} className={nameLutin} alt="Lutin" />
         </div>
       ) : null}
     </div>

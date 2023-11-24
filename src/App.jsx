@@ -1,13 +1,11 @@
-import ChristmasPage from "./pages/ChristmasPage"
+import ChristmasPage from "./pages/ChristmasPage";
 
 function App() {
- 
-
   return (
     <>
       <ChristmasPage />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
