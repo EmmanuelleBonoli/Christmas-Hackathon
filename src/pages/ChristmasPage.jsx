@@ -1,7 +1,7 @@
 import SnowMan from "../components/SnowMan";
 import Decorations from "../components/Decorations";
 import SnowEffect from "../components/SnowEffect";
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import html2canvas from 'html2canvas';
 
 const ChristmasPage = () => {
