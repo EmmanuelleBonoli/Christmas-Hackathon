@@ -25,9 +25,9 @@
 .traineau {
   width: 50%;
   position:absolute;
-  z-index: 195;
+  z-index: 1;
   animation-name: slideIn;
-  animation-duration: 30s;
+  animation-duration: 20s;
   animation-iteration-count: infinite;
 }
 @keyframes slideIn {
@@ -35,16 +35,16 @@
     transform: translate(-2000px, 0px);
   }
   10% {
-    transform: translate(0px, 200px);
+    transform: translate(0px, 200px) ;
   }
-  20% {
-    transform: translate(2000px, 40px);
-  }
-  21%{
-    transform: translate(20000px, 40px);
-  }
+ 50% {
+     transform: translate(10000px, 40px) scale(0.1);
+   }
+  // 21%{
+  //   transform: translate(20000px, 40px);
+  // }
   100% {
-    transform: translate(20000px, 40px);
+    transform: translate(20000px, 40px) ;
   }
 
 }

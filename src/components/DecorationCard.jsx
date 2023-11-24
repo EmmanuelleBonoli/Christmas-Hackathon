@@ -1,5 +1,7 @@
+
 import React, { useState, useRef } from "react";
 import decorationsList from "./decorationsList";
+
 
 
 const DecorationCard = ({ decoration, translate, setTranslate }) => {
