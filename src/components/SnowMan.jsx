@@ -16,7 +16,7 @@ function SnowMan() {
   const [snowBall, setSnowBall] = useState({
     isVisible: false,
     positionX: 0,
-    positionY: 1000,
+    positionY: 800,
   });
 
   const minInterval = 6000;
@@ -44,8 +44,10 @@ function SnowMan() {
   useEffect(() => {
     if (urlLutin === "./images/lutin.png") {
       setNameLutin("lucas");
-    } else {
+    } else if (urlLutin === "./images/lutin2.png" ) {
       setNameLutin("lukasz");
+    } else{
+      setNameLutin("lea");
     }
   }, [urlLutin]);
 
@@ -56,8 +58,8 @@ function SnowMan() {
     const snowmanBottom = window.innerHeight - e.clientY;
 
     const frames = 3000 / 8;
-    const pixelToGoInX = snowmanRight + 100 - window.innerWidth / 3;
-    const pixelToGoInY = snowmanBottom - 200;
+    const pixelToGoInX = snowmanRight  - window.innerWidth / 3;
+    const pixelToGoInY = snowmanBottom 
 
     const pixelPerFramesInX = pixelToGoInX / frames;
     const pixelPerFramesInY = pixelToGoInY / frames;
@@ -81,14 +83,16 @@ function SnowMan() {
 
     setTimeout(() => {
       clearInterval(interval);
-      setSnowBall({ positionX: 0, positionY: 1000, isVisible: false });
+      setSnowBall({ positionX: 0, positionY: 800, isVisible: false });
       setSnowMan(1);
       setUrlSnowBall("./images/snowBall.png");
       setAnimationSnowMen("");
 
       if (urlLutin === "./images/lutin.png") {
         setUrlLutin("./images/lutin2.png");
-      } else {
+      } else if(urlLutin === "./images/lutin2.png") {
+        setUrlLutin("./images/lutin3.png");
+      } else{
         setUrlLutin("./images/lutin.png");
       }
     }, 3000);
