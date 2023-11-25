@@ -67,7 +67,7 @@ const ChristmasPage = () => {
       {!message && (
         <button
           type="button"
-          className="captureButton ignore-capture"
+          className="captureButton3 ignore-capture"
           onClick={() => setMessage(!message)}
         >
           Write a sweet message
